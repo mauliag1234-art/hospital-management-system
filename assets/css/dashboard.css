@@ -1,0 +1,161 @@
+/* ==========================
+   MediCore HMS Dashboard
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f8fc;
+}
+
+.wrapper{
+    display:flex;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:270px;
+    min-height:100vh;
+    background:linear-gradient(180deg,#0d6efd,#0a58ca);
+    color:#fff;
+    position:fixed;
+    left:0;
+    top:0;
+    padding:25px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:40px;
+}
+
+.logo i{
+    font-size:34px;
+}
+
+.logo h2{
+    font-size:24px;
+    font-weight:700;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar ul li{
+    margin:12px 0;
+    padding:14px 18px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active{
+    background:rgba(255,255,255,.18);
+}
+
+.sidebar ul li i{
+    width:30px;
+}
+
+.sidebar ul li a{
+    color:#fff;
+    text-decoration:none;
+    display:block;
+}
+
+/* Main */
+
+.main-content{
+    margin-left:270px;
+    width:calc(100% - 270px);
+    padding:30px;
+}
+
+/* Topbar */
+
+.topbar{
+    background:#fff;
+    border-radius:18px;
+    padding:20px 30px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    margin-bottom:30px;
+}
+
+.topbar h2{
+    margin:0;
+    color:#1b2b52;
+}
+
+/* Cards */
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+.dashboard-card{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-8px);
+}
+
+.dashboard-card h5{
+    color:#6c757d;
+    margin-bottom:10px;
+}
+
+.dashboard-card h2{
+    font-weight:700;
+    color:#0d6efd;
+}
+
+.dashboard-card i{
+    font-size:35px;
+    color:#0d6efd;
+    float:right;
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.sidebar{
+    width:80px;
+}
+
+.logo h2{
+    display:none;
+}
+
+.main-content{
+    margin-left:80px;
+    width:calc(100% - 80px);
+}
+
+.sidebar ul li{
+    text-align:center;
+}
+
+.sidebar ul li i{
+    width:auto;
+}
+
+}

@@ -1,0 +1,345 @@
+/* ===========================
+   MediCore HMS Login
+   Part 1
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#eef7ff,#dff1ff,#f8fbff);
+    min-height:100vh;
+    overflow:hidden;
+}
+
+.login-wrapper{
+    width:100%;
+    height:100vh;
+    display:flex;
+}
+
+.login-left{
+    width:50%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:80px;
+    position:relative;
+}
+
+.login-left::before{
+    content:'';
+    position:absolute;
+    width:320px;
+    height:320px;
+    background:#38bdf8;
+    opacity:.15;
+    border-radius:50%;
+    top:-100px;
+    left:-100px;
+    filter:blur(60px);
+}
+
+.login-left::after{
+    content:'';
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:#2563eb;
+    opacity:.10;
+    border-radius:50%;
+    bottom:-60px;
+    right:100px;
+    filter:blur(70px);
+}
+
+.brand{
+    position:relative;
+    z-index:2;
+}
+
+.logo{
+    width:90px;
+    height:90px;
+    background:#2563eb;
+    border-radius:24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:40px;
+    margin-bottom:25px;
+    box-shadow:0 20px 40px rgba(37,99,235,.25);
+}
+
+.brand h1{
+    font-size:48px;
+    font-weight:700;
+    color:#1e293b;
+    margin-bottom:10px;
+}
+
+.brand p{
+    font-size:18px;
+    color:#64748b;
+    margin-bottom:50px;
+}
+
+.feature-list{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.feature{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    font-size:18px;
+    color:#334155;
+    font-weight:500;
+}
+
+.feature i{
+    width:48px;
+    height:48px;
+    background:#fff;
+    color:#2563eb;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.login-right{
+    width:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px;
+}
+
+.login-card{
+    width:100%;
+    max-width:480px;
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(25px);
+    border:1px solid rgba(255,255,255,.7);
+    border-radius:30px;
+    padding:50px;
+    box-shadow:0 25px 60px rgba(0,0,0,.10);
+}
+
+.login-card h2{
+    font-size:34px;
+    color:#1e293b;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.login-card p{
+    color:#64748b;
+    margin-bottom:35px;
+}
+
+.input-box{
+    margin-bottom:25px;
+}
+
+.input-box label{
+    display:block;
+    margin-bottom:10px;
+    color:#334155;
+    font-weight:600;
+}
+/* ===========================
+   MediCore HMS Login
+   Part 2
+=========================== */
+
+/* Input Group */
+
+.input-group{
+    border:1px solid #dbeafe;
+    border-radius:14px;
+    overflow:hidden;
+    background:#fff;
+    transition:.3s;
+}
+
+.input-group:focus-within{
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+}
+
+.input-group-text{
+    background:#fff;
+    border:none;
+    color:#2563eb;
+    padding:14px 16px;
+}
+
+.form-control{
+    border:none;
+    box-shadow:none !important;
+    padding:14px;
+    font-size:15px;
+}
+
+.form-control::placeholder{
+    color:#94a3b8;
+}
+
+.toggle-password{
+    cursor:pointer;
+    transition:.3s;
+}
+
+.toggle-password:hover{
+    color:#0ea5e9;
+}
+
+/* Remember */
+
+.form-check-label{
+    color:#475569;
+    font-size:14px;
+}
+
+.forgot-link{
+    color:#2563eb;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+}
+
+.forgot-link:hover{
+    color:#0ea5e9;
+}
+
+/* Login Button */
+
+.login-btn{
+    width:100%;
+    border:none;
+    border-radius:14px;
+    padding:15px;
+    font-size:16px;
+    font-weight:600;
+    color:#fff;
+    background:linear-gradient(135deg,#2563eb,#0ea5e9);
+    transition:.3s;
+    box-shadow:0 15px 30px rgba(37,99,235,.25);
+}
+
+.login-btn i{
+    margin-right:8px;
+}
+
+.login-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 20px 40px rgba(37,99,235,.35);
+}
+
+/* Floating Animation */
+
+.logo{
+    animation:floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/* Fade Animation */
+
+.login-card{
+    animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+    body{
+        overflow:auto;
+    }
+
+    .login-wrapper{
+        flex-direction:column;
+        height:auto;
+    }
+
+    .login-left,
+    .login-right{
+        width:100%;
+        padding:40px 25px;
+    }
+
+    .brand h1{
+        font-size:36px;
+    }
+
+    .login-card{
+        padding:35px 25px;
+    }
+
+}
+
+@media(max-width:576px){
+
+    .logo{
+        width:70px;
+        height:70px;
+        font-size:30px;
+    }
+
+    .brand h1{
+        font-size:28px;
+    }
+
+    .feature{
+        font-size:15px;
+    }
+
+    .feature i{
+        width:40px;
+        height:40px;
+    }
+
+    .login-card h2{
+        font-size:28px;
+    }
+
+}
