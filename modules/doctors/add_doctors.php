@@ -51,26 +51,21 @@ include "../../config/database.php";
             <div class="row">
 
                 <!-- Left Side -->
-
                 <div class="col-md-3 mb-4">
 
                     <div class="photo-box">
-
-                        <img
-                            id="preview"
-                            src="../../assets/images/default-doctor.png"
-                            alt="Doctor Photo">
-
+                        <img id="preview"
+                             src="../../assets/images/default-doctor.png"
+                             alt="Doctor Photo">
                     </div>
 
                     <br>
 
-                    <input
-                        type="file"
-                        class="form-control"
-                        id="photo"
-                        name="photo"
-                        accept="image/*">
+                    <input type="file"
+                           class="form-control"
+                           id="photo"
+                           name="photo"
+                           accept="image/*">
 
                     <div class="upload-text mt-2">
                         Upload Doctor Photo
@@ -79,11 +74,11 @@ include "../../config/database.php";
                 </div>
 
                 <!-- Right Side -->
-
                 <div class="col-md-9">
 
-                    <div class="row"></div>
-                                            <div class="col-md-4 mb-3">
+                    <div class="row">
+
+                        <div class="col-md-4 mb-3">
                             <label class="form-label">Doctor ID</label>
                             <input type="text"
                                    class="form-control"
@@ -110,11 +105,15 @@ include "../../config/database.php";
 
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Gender</label>
-                            <select class="form-select" name="gender" required>
+                            <select class="form-select"
+                                    name="gender"
+                                    required>
+
                                 <option value="">Select Gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Other">Other</option>
+
                             </select>
                         </div>
 
@@ -135,8 +134,7 @@ include "../../config/database.php";
                                    placeholder="MBBS, MD"
                                    required>
                         </div>
-
-                        <div class="col-md-4 mb-3">
+                                                <div class="col-md-4 mb-3">
                             <label class="form-label">Experience (Years)</label>
                             <input type="number"
                                    class="form-control"
@@ -161,7 +159,8 @@ include "../../config/database.php";
                                    name="email"
                                    placeholder="doctor@example.com">
                         </div>
-                                                <div class="col-md-4 mb-3">
+
+                        <div class="col-md-4 mb-3">
                             <label class="form-label">Consultation Fee (₹)</label>
                             <input type="number"
                                    class="form-control"
@@ -174,36 +173,47 @@ include "../../config/database.php";
 
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Status</label>
-                            <select class="form-select" name="status" required>
+                            <select class="form-select"
+                                    name="status"
+                                    required>
+
                                 <option value="Active">Active</option>
                                 <option value="Inactive">Inactive</option>
+
                             </select>
                         </div>
 
                         <div class="col-12 mb-3">
                             <label class="form-label">Address</label>
+
                             <textarea class="form-control"
                                       name="address"
                                       rows="3"
                                       placeholder="Enter Complete Address"></textarea>
                         </div>
 
-                    </div>
+                    </div> <!-- End row -->
 
-                </div>
+                </div> <!-- End col-md-9 -->
 
-            </div>
+            </div> <!-- End main row -->
 
             <div class="text-end mt-4">
 
-                <a href="view_doctors.php" class="btn btn-secondary">
+                <a href="view_doctors.php"
+                   class="btn btn-secondary">
+
                     <i class="fa-solid fa-arrow-left"></i>
                     Back
+
                 </a>
 
-                <button type="submit" class="btn btn-primary">
+                <button type="submit"
+                        class="btn btn-primary">
+
                     <i class="fa-solid fa-floppy-disk"></i>
                     Save Doctor
+
                 </button>
 
             </div>
