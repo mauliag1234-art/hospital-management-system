@@ -1,0 +1,124 @@
+/* ==========================
+   Appointment Module
+========================== */
+
+body{
+    background:#f4f7fc;
+    font-family:'Poppins',sans-serif;
+}
+
+/* Card */
+.appointment-card{
+    background:#fff;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.appointment-card:hover{
+    transform:translateY(-3px);
+}
+
+/* Heading */
+.appointment-card h2{
+    font-size:28px;
+    font-weight:600;
+    color:#0d6efd;
+}
+
+.appointment-card h2 i{
+    margin-right:8px;
+}
+
+/* Labels */
+.form-label{
+    font-weight:600;
+    color:#333;
+}
+
+/* Inputs */
+.form-control,
+.form-select{
+    border-radius:10px;
+    padding:10px;
+    transition:.3s;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 10px rgba(13,110,253,.25);
+}
+
+/* Buttons */
+.btn{
+    border-radius:10px;
+    padding:10px 18px;
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+.btn-success:hover{
+    transform:translateY(-2px);
+}
+
+.btn-secondary:hover{
+    transform:translateY(-2px);
+}
+
+.btn-warning:hover{
+    transform:translateY(-2px);
+}
+
+.btn-danger:hover{
+    transform:translateY(-2px);
+}
+
+/* Table */
+.table{
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.table thead{
+    background:#0d6efd;
+    color:#fff;
+}
+
+.table tbody tr:hover{
+    background:#eef5ff;
+}
+
+/* Status Badges */
+.badge{
+    font-size:13px;
+    padding:8px 12px;
+    border-radius:20px;
+}
+
+/* Alerts */
+.alert{
+    border-radius:10px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    .appointment-card{
+        padding:20px;
+    }
+
+    .appointment-card h2{
+        font-size:22px;
+    }
+
+    .btn{
+        width:100%;
+        margin-bottom:10px;
+    }
+
+}
