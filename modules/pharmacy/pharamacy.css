@@ -1,0 +1,134 @@
+/* ===========================
+   PHARMACY MODULE CSS
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+/* Container */
+
+.container{
+    margin-top:30px;
+}
+
+/* Card */
+
+.card{
+    border:none;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+/* Header */
+
+.card-header{
+    font-size:24px;
+    font-weight:bold;
+    padding:18px;
+}
+
+/* Card Body */
+
+.card-body{
+    background:#fff;
+}
+
+/* Labels */
+
+label{
+    font-weight:600;
+    color:#444;
+}
+
+/* Inputs */
+
+.form-control{
+    border-radius:10px;
+    padding:10px;
+    border:1px solid #ced4da;
+}
+
+.form-control:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 8px rgba(13,110,253,.30);
+}
+
+/* Buttons */
+
+.btn{
+    border-radius:10px;
+    padding:8px 18px;
+    transition:.3s;
+}
+
+.btn-success:hover{
+    transform:translateY(-2px);
+}
+
+.btn-warning:hover{
+    transform:translateY(-2px);
+}
+
+.btn-danger:hover{
+    transform:translateY(-2px);
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+.btn-secondary:hover{
+    transform:translateY(-2px);
+}
+
+/* Table */
+
+.table{
+    margin-top:10px;
+}
+
+.table thead{
+    background:#0d6efd;
+    color:#fff;
+}
+
+.table th,
+.table td{
+    text-align:center;
+    vertical-align:middle;
+}
+
+/* Success */
+
+.alert-success{
+    border-radius:10px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.card-header{
+font-size:18px;
+text-align:center;
+}
+
+.btn{
+margin-top:5px;
+width:100%;
+}
+
+.table{
+font-size:13px;
+}
+
+}
