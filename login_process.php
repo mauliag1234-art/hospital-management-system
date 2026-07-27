@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     header("Location: login.php");
     exit();
 }
-
+    
 $role = trim($_POST['role']);
 $username = mysqli_real_escape_string($conn, trim($_POST['username']));
 $password = mysqli_real_escape_string($conn, trim($_POST['password']));
