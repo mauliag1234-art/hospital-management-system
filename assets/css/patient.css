@@ -1,0 +1,80 @@
+body{
+    background:#eef5ff;
+    font-family:'Poppins',sans-serif;
+}
+
+.patient-card{
+    background:#fff;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.patient-card h2{
+    font-size:30px;
+    font-weight:700;
+    color:#1565c0;
+}
+
+.form-label{
+    font-weight:600;
+    color:#444;
+}
+
+.form-control,
+.form-select{
+    border-radius:12px;
+    height:50px;
+    border:1px solid #d9e3f0;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 10px rgba(13,110,253,.25);
+}
+
+textarea.form-control{
+    height:120px;
+}
+
+.btn{
+    border-radius:12px;
+    padding:12px 25px;
+    font-weight:600;
+}
+
+.btn-primary{
+    background:#1565c0;
+    border:none;
+}
+
+.btn-primary:hover{
+    background:#0d47a1;
+}
+
+.photo-box{
+    width:180px;
+    height:180px;
+    border:3px dashed #90caf9;
+    border-radius:50%;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    cursor:pointer;
+    background:#f8fbff;
+}
+
+.photo-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.upload-text{
+    color:#1565c0;
+    text-align:center;
+    font-weight:600;
+}
