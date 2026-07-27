@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // ==========================================
 // MediCore HMS Login JS
 // ==========================================
@@ -79,6 +80,24 @@ document.addEventListener("DOMContentLoaded", function () {
             this.style.transform = "translateY(0) scale(1)";
 
         });
+=======
+const toggle = document.querySelector(".toggle-password");
+const password = document.getElementById("password");
+
+toggle.addEventListener("click", () => {
+
+    if(password.type === "password"){
+
+        password.type = "text";
+
+        toggle.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+
+    }else{
+
+        password.type = "password";
+
+        toggle.innerHTML = '<i class="fa-solid fa-eye"></i>';
+>>>>>>> d8703f907a74b15f87f9e3b0f402de030a535106
 
     }
 
