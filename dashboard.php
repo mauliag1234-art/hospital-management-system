@@ -7,7 +7,6 @@ if (!isset($_SESSION['admin_id'])) {
 }
 
 include "config/database.php";
-<<<<<<< HEAD
 
 // Total Patients
 $patients = mysqli_fetch_assoc(mysqli_query($conn,
@@ -30,9 +29,6 @@ if (!$revenue) {
 }
 ?>
 
-=======
-?>
->>>>>>> d8703f907a74b15f87f9e3b0f402de030a535106
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,7 +89,6 @@ if (!$revenue) {
     </a>
 </li>
 
-<<<<<<< HEAD
  <li>
     <a href="modules/doctors/add_doctors.php">
         <i class="fa-solid fa-user-doctor"></i>
@@ -152,32 +147,6 @@ if (!$revenue) {
         Settings
     </a>
 </li>
-=======
-            <li>
-                <i class="fa-solid fa-user-doctor"></i>
-                Doctors
-            </li>
-
-            <li>
-                <i class="fa-solid fa-calendar-check"></i>
-                Appointments
-            </li>
-
-            <li>
-                <i class="fa-solid fa-file-invoice-dollar"></i>
-                Billing
-            </li>
-
-            <li>
-                <i class="fa-solid fa-chart-line"></i>
-                Reports
-            </li>
-
-            <li>
-                <i class="fa-solid fa-gear"></i>
-                Settings
-            </li>
->>>>>>> d8703f907a74b15f87f9e3b0f402de030a535106
 
             <li>
 
@@ -199,7 +168,6 @@ if (!$revenue) {
 
     <main class="main-content">
 
-<<<<<<< HEAD
        <div class="topbar" style="display:flex;justify-content:space-between;align-items:center;">
 
     <h2>
@@ -212,58 +180,30 @@ if (!$revenue) {
    
 
 </div>
-=======
-        <div class="topbar">
-
-            <h2>
-
-                Welcome,
-                <?php echo $_SESSION['admin_name']; ?>
-
-            </h2>
-
-        </div>
->>>>>>> d8703f907a74b15f87f9e3b0f402de030a535106
         <div class="card-grid">
 
     <div class="dashboard-card">
         <i class="fa-solid fa-user-injured"></i>
         <h5>Total Patients</h5>
-<<<<<<< HEAD
         <h2><?php echo $patients; ?></h2>
-=======
-        <h2>125</h2>
->>>>>>> d8703f907a74b15f87f9e3b0f402de030a535106
     </div>
 
     <div class="dashboard-card">
         <i class="fa-solid fa-user-doctor"></i>
         <h5>Total Doctors</h5>
-<<<<<<< HEAD
         <h2><?php echo $doctors; ?></h2>
-=======
-        <h2>18</h2>
->>>>>>> d8703f907a74b15f87f9e3b0f402de030a535106
     </div>
 
     <div class="dashboard-card">
         <i class="fa-solid fa-calendar-check"></i>
         <h5>Today's Appointments</h5>
-<<<<<<< HEAD
         <h2><?php echo $appointments; ?></h2>
-=======
-        <h2>32</h2>
->>>>>>> d8703f907a74b15f87f9e3b0f402de030a535106
     </div>
 
     <div class="dashboard-card">
         <i class="fa-solid fa-indian-rupee-sign"></i>
         <h5>Total Revenue</h5>
-<<<<<<< HEAD
         <h2>₹<?php echo number_format($revenue); ?></h2>
-=======
-        <h2>₹85,000</h2>
->>>>>>> d8703f907a74b15f87f9e3b0f402de030a535106
     </div>
 
 </div>
