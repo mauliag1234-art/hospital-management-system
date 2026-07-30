@@ -1,168 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MediCore HMS | Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>MediCore HMS | Login</title>
 
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/login.css">
 
 </head>
 
 <body>
 
-<div class="login-wrapper">
+<div class="main-container">
 
-<div class="login-left">
+    <!-- Background Image -->
 
-<div class="brand">
+    <img src="assets/images/hospital.jpg" class="bg-image">
 
-<div class="logo">
-<i class="fa-solid fa-hospital"></i>
-</div>
+    <div class="bg-overlay"></div>
 
-<h1>MediCore HMS</h1>
+    <!-- Login Card -->
 
-<p>Smart Hospital Management System</p>
+    <div class="login-card">
 
-</div>
+        <div class="logo-box">
 
-<div class="feature-list">
+            <img src="assets/images/logo.png" class="logo">
 
-<div class="feature">
-<i class="fa-solid fa-user-injured"></i>
-<span>Patient Management</span>
-</div>
+            <h2>MediCore HMS</h2>
 
-<div class="feature">
-<i class="fa-solid fa-user-doctor"></i>
-<span>Doctor Management</span>
-</div>
+            <p>Hospital Management System</p>
 
-<div class="feature">
-<i class="fa-solid fa-calendar-check"></i>
-<span>Appointment Scheduling</span>
-</div>
+        </div>
 
-<div class="feature">
-<i class="fa-solid fa-file-invoice-dollar"></i>
-<span>Billing & Reports</span>
-</div>
+        <h3>Welcome Back!</h3>
 
-</div>
+        <span class="sub-title">
 
-</div>
+            Login to continue
 
-<div class="login-right">
+        </span>
 
-<div class="login-card">
+        <form action="login_process.php" method="POST">
 
-<h2>Welcome Back</h2>
+            <!-- Role -->
 
-<p>Login to continue</p>
+            <div class="mb-3">
 
-<form action="login_process.php" method="POST">
+                <label class="form-label">
 
-<div class="input-box">
+                    Login As
 
-<label>Username</label>
+                </label>
 
-<div class="input-group">
+                <select class="form-select" name="role">
 
-<span class="input-group-text">
+                    <option>Administrator</option>
 
-<i class="fa-solid fa-user"></i>
+                    <option>Doctor</option>
 
-</span>
+                    <option>Laboratory</option>
 
-<input
+                    <option>Pharmacy</option>
+
+                </select>
+
+            </div>
+
+            <!-- Username -->
+
+            <div class="mb-3">
+
+                <label class="form-label">
+
+                    Username
+
+                </label>
+
+                <div class="input-group">
+
+                    <span class="input-group-text">
+
+                        <i class="fa fa-user"></i>
+
+                    </span>
+
+                    <input
 type="text"
+class="form-control"
 name="username"
-class="form-control"
 placeholder="Enter Username"
+value="<?php echo isset($_COOKIE['remember_username']) ? $_COOKIE['remember_username'] : ''; ?>"
 required>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-<div class="input-box">
+            <!-- Password -->
 
-<label>Password</label>
+            <div class="mb-3">
 
-<div class="input-group">
+                <label class="form-label">
 
-<span class="input-group-text">
+                    Password
 
-<i class="fa-solid fa-lock"></i>
+                </label>
 
-</span>
+                <div class="input-group">
 
-<input
-type="password"
-id="password"
-name="password"
-class="form-control"
-placeholder="Enter Password"
-required>
+                    <span class="input-group-text">
 
-<span class="input-group-text toggle-password">
+                        <i class="fa fa-lock"></i>
 
-<i class="fa-solid fa-eye"></i>
+                    </span>
 
-</span>
+                    <input
+                        type="password"
+                        id="password"
+                        class="form-control"
+                        name="password"
+                        placeholder="Enter Password"
+                        required>
 
-</div>
+                    <button
+                        class="input-group-text"
+                        type="button"
+                        id="togglePassword">
 
-</div>
+                        <i class="fa fa-eye"></i>
 
-<div class="d-flex justify-content-between align-items-center mb-4">
+                    </button>
 
-<div class="form-check">
+                </div>
 
-<input
-class="form-check-input"
-type="checkbox"
-id="remember">
+            </div>
+                        <div class="d-flex justify-content-between align-items-center mb-4">
 
-<label class="form-check-label" for="remember">
+                <div class="form-check">
 
-Remember Me
+                <input
+    class="form-check-input"
+    type="checkbox"
+    id="remember"
+    name="remember"
+    value="1">
 
-</label>
+                    <label
+                        class="form-check-label"
+                        for="remember">
 
-</div>
+                        Remember Me
 
-<a href="#" class="forgot-link">
+                    </label>
 
-Forgot Password?
+                </div>
 
+                <a href="forget_password.php" class="forgot-link">
+    Forgot Password?
 </a>
 
-</div>
+            </div>
 
-<button type="submit" class="login-btn">
+            <button
+                type="submit"
+                class="btn login-btn">
 
-<i class="fa-solid fa-right-to-bracket"></i>
+                <i class="fa-solid fa-right-to-bracket"></i>
 
-Sign In
+                Sign In
 
-</button>
+            </button>
 
-</form>
+        </form>
 
-</div>
+        <div class="login-footer">
 
-</div>
+            Secure Login • MediCore HMS © 2026
+
+        </div>
+
+    </div>
+
+    <!-- ==========================
+         RIGHT CONTENT
+    =========================== -->
+
+    <div class="hero-section">
+
+        <div class="hero-content">
+
+            <h1>
+
+                Advanced Care.
+
+            </h1>
+
+            <h1>
+
+                Better Outcomes.
+
+            </h1>
+
+            <p>
+
+                Delivering world-class healthcare with innovation,
+                compassion and modern medical technology.
+
+            </p>
+
+            <div class="feature-list">
+
+                <div class="feature-item">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                    <span>120+ Specialist Doctors</span>
+
+                </div>
+
+                <div class="feature-item">
+
+                    <i class="fa-solid fa-bed"></i>
+
+                    <span>250+ Smart Hospital Beds</span>
+
+                </div>
+
+                <div class="feature-item">
+
+                    <i class="fa-solid fa-heart-pulse"></i>
+
+                    <span>24×7 Emergency Services</span>
+
+                </div>
+
+                <div class="feature-item">
+
+                    <i class="fa-solid fa-microscope"></i>
+
+                    <span>Advanced Diagnostic Laboratory</span>
+
+                </div>
+
+            </div>
+
+            <div class="bottom-glass">
+
+                <div>
+
+                    <h3>50K+</h3>
+
+                    <span>Patients Treated</span>
+
+                </div>
+
+                <div>
+
+                    <h3>99%</h3>
+
+                    <span>Patient Satisfaction</span>
+
+                </div>
+
+                <div>
+
+                    <h3>24×7</h3>
+
+                    <span>Medical Support</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
 <script src="assets/js/login.js"></script>
 
 </body>
+
 </html>

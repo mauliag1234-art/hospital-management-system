@@ -1,31 +1,87 @@
 <?php
 session_start();
-
 include "config/database.php";
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+if ($_SERVER["REQUEST_METHOD"] != "POST") {
+    header("Location: login.php");
+    exit();
+}
 
-$sql = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
+$role = trim($_POST['role']);
+$username = mysqli_real_escape_string($conn, trim($_POST['username']));
+$password = mysqli_real_escape_string($conn, trim($_POST['password']));
 
-$result = mysqli_query($conn,$sql);
+switch ($role) {
 
-if(mysqli_num_rows($result)>0){
+    case "Administrator":
+        $sql = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
+        break;
 
-$row=mysqli_fetch_assoc($result);
+    case "Doctor":
+        $sql = "SELECT * FROM doctors WHERE username='$username' AND password='$password'";
+        break;
 
-$_SESSION['admin_id']=$row['id'];
-$_SESSION['admin_name']=$row['fullname'];
+    case "Laboratory":
+        $sql = "SELECT * FROM laboratory WHERE username='$username' AND password='$password'";
+        break;
 
-header("Location: dashboard.php");
-exit;
+    case "Pharmacy":
+        $sql = "SELECT * FROM medicines WHERE username='$username' AND password='$password'";
+        break;
+
+    default:
+        die("Invalid Role");
+}
+
+$result = mysqli_query($conn, $sql);
+
+if (!$result) {
+    die("SQL Error : " . mysqli_error($conn));
+}
+
+if (mysqli_num_rows($result) == 1) {
+
+    $row = mysqli_fetch_assoc($result);
+
+    // Session ID
+    if ($role == "Pharmacy") {
+        $_SESSION['admin_id'] = $row['medicine_id'];
+    } else {
+        $_SESSION['admin_id'] = $row['id'];
+    }
+
+    $_SESSION['admin_name'] = $row['fullname'];
+    $_SESSION['role'] = $role;
+
+    if(isset($_POST['remember'])){
+
+    setcookie(
+        "remember_username",
+        $username,
+        time() + (30 * 24 * 60 * 60),
+        "/"
+    );
 
 }else{
 
-echo "<script>
-alert('Invalid Username or Password');
-window.location='login.php';
-</script>";
+    setcookie(
+        "remember_username",
+        "",
+        time() - 3600,
+        "/"
+    );
 
+}
+
+    header("Location: dashboard.php");
+    exit();
+
+} else {
+
+    echo "<script>
+    alert('Invalid Username or Password');
+    window.location='login.php';
+    </script>";
+    exit();
 }
 ?>

@@ -158,4 +158,46 @@ body{
     width:auto;
 }
 
+<<<<<<< HEAD
+}
+/* ==========================
+   Reports Module
+========================== */
+
+.row{
+    display:flex;
+    gap:20px;
+    margin-top:25px;
+    flex-wrap:wrap;
+}
+
+.col-lg-6{
+    flex:1;
+    min-width:450px;
+}
+
+.dashboard-card canvas{
+    width:100% !important;
+    height:320px !important;
+}
+
+.dashboard-card h4{
+    color:#1b2b52;
+    margin-bottom:20px;
+    font-weight:600;
+    text-align:center;
+}
+
+@media(max-width:992px){
+
+    .row{
+        flex-direction:column;
+    }
+
+    .col-lg-6{
+        min-width:100%;
+    }
+
+=======
+>>>>>>> d8703f907a74b15f87f9e3b0f402de030a535106
 }
